@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Desk</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<main class="page">
+
+    <!-- Tasks 1-2: profile card built from the userProfile object -->
+    <section class="profile" aria-labelledby="profileName">
+        <div class="avatar" id="avatar" aria-hidden="true">R</div>
+        <div class="profile-info">
+            <h1 id="profileName">Rassul</h1>
+            <p class="profile-sub">
+                Born in <span id="birthYearOut">2008</span>
+                · <span id="devOut">Developer</span>
+            </p>
+        </div>
+        <dl class="stats">
+            <div>
+                <dt>Age</dt>
+                <dd id="ageOut">21</dd>
+            </div>
+            <div>
+                <dt>Months old (approx.)</dt>
+                <dd id="monthsOut">0</dd>
+            </div>
+            <div>
+                <dt>Hobbies</dt>
+                <dd id="hobbyCountOut">0</dd>
+            </div>
+        </dl>
+    </section>
+
+    <div class="columns">
+
+        <!-- Tasks 3-4: form -->
+        <section class="panel" aria-labelledby="formTitle">
+            <h2 id="formTitle">Create / Update Profile</h2>
+            <form id="profileForm" novalidate>
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Your name" maxlength="30" autocomplete="off">
+
+                <label for="birthYear">Birth year</label>
+                <input type="number" id="birthYear" placeholder="For example 2008" inputmode="numeric">
+
+                <button type="submit" class="btn btn-main">Create / Update Profile</button>
+                <p id="formMessage" class="message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <!-- Task 5: list -->
+        <section class="panel" aria-labelledby="listTitle">
+            <h2 id="listTitle">My Hobbies</h2>
+            <ul id="hobbyList" class="hobby-list"></ul>
+            <p id="emptyNote" class="empty" hidden>The list is empty. Type a hobby below and press Add Item.</p>
+
+            <div class="add-row">
+                <input type="text" id="hobbyInput" placeholder="New hobby" maxlength="40" aria-label="New hobby" autocomplete="off">
+                <button type="button" id="addBtn" class="btn btn-main">Add Item</button>
+                <button type="button" id="removeBtn" class="btn btn-danger">Remove Item</button>
+            </div>
+        </section>
+
+    </div>
+</main>
+</body>
+</html>
